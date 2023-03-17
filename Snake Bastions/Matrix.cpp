@@ -3,7 +3,8 @@
 using namespace std;
 Matrix::Matrix(int _rows, int _columns, int* _cells) : rows(_rows), columns(_columns), cells(_cells) {}
 
-void Matrix::init_cells(ifstream* input, Matrix m)
+void Matrix::init_cells(ifstream* input, Matrix m) 
+//This function reads input to Cell array, pointer to it is stored as int (can be converted easly as in the print_cells function
 {
 	Cell* cells = (Cell*)malloc(sizeof(Cell) * m.rows * m.columns);
 	if (input->is_open() && cells)
@@ -24,8 +25,9 @@ void Matrix::init_cells(ifstream* input, Matrix m)
 	else this->cells = nullptr;
 }
 
-void Matrix::print_cells()
+void Matrix::print_matrix()
 {
+// This prints the matrix, just to check if everything reads correctly
 	for (int i = 0; i < this->rows; i++)
 	{
 		for (int j = 0; j < this->columns; j++)

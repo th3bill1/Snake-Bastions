@@ -10,7 +10,7 @@ public:
     int* cells;
     Matrix(int rows = 0, int columns = 0, int* cells = nullptr);
     void init_cells(ifstream* input, Matrix m);
-    void print_cells();
+    void print_matrix();
 };
 
 

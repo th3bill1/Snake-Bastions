@@ -10,7 +10,7 @@ int User_choice();
 const char* file()
 {
     const char* input1 = "/Users/serhatseval/Developer/Xcode Files/SnakesandHoles/SnakesandHoles/00-example-2.txt";
-    const char* input2 = "C:/Users/admin/source/repos/Snake Bastions/Snake Bastions/00-example-2.txt";
+    const char* input2 = "00-example-2.txt";
     int choice = User_choice();
     if (choice == 1) return input1;
     if (choice == 2)
