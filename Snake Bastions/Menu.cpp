@@ -3,11 +3,15 @@
 #include <string>
 using namespace std;
 
+/* This part of the code is made to ensure you read correct file. You can create variable for any file source in file() as below and change possible input numbers in the array.
+    Later on we can use it for testing different inputs from the site.
+*/
+
 const int input_numbers[] = { 1,2 };
 
 int User_choice();
 
-const char* file()
+const char* file() 
 {
     const char* input1 = "/Users/serhatseval/Developer/Xcode Files/SnakesandHoles/SnakesandHoles/00-example-2.txt";
     const char* input2 = "00-example-2.txt";

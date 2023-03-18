@@ -14,9 +14,19 @@ void main(int argc, const char* argv[]) {
     input.open(file()); //Choosing input source file 
     ifstream* input_point = &input; //Pointer to ifstream is neccesary because you cannot copy of ifstream for a call of function
     input >> columns >> rows >> numberofSnakes;
+    cout << columns << ' ' << rows << ' ' << numberofSnakes << endl;
     Matrix matrix = { rows, columns, nullptr }; //Initializing matrix
     Snake* snakes = init_snakes(input_point,numberofSnakes); //Reading snakes length from the file
+    print_snakes(snakes, numberofSnakes); // Printing snakes to check if read correctly
+    cout << endl;
     matrix.init_cells(input_point, matrix); //Reading cells from the file
-    matrix.print_matrix(); //Printing matrix for safety
-    if (input.is_open()) input.close(); //Closing the file
+    matrix.print_matrix(); //Printing matrix to check if read correctly
+    cout << endl << endl << endl;
+    input.close();
+    snakes[1].set_starting_pos(0, 5, matrix);
+    for (int i = 0; i < 10; i++)
+    {
+        snakes[1].move(UP, matrix);
+    }   
+    cout << snakes[1].points;
 }
