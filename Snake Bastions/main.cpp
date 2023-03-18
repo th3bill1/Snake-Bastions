@@ -12,7 +12,7 @@ void main(int argc, const char* argv[]) {
 
     ifstream input;
     input.open(file()); //Choosing input source file 
-    ifstream* input_point = &input; //Pointer to ifstream is neccesary because you cannot copy of ifstream for a call of function
+    ifstream* input_point = &input; //Pointer to ifstream is neccesary because you cannot copy ifstream for a call of function
     input >> columns >> rows >> numberofSnakes;
     cout << columns << ' ' << rows << ' ' << numberofSnakes << endl;
     Matrix matrix = { rows, columns, nullptr }; //Initializing matrix
@@ -23,6 +23,7 @@ void main(int argc, const char* argv[]) {
     matrix.print_matrix(); //Printing matrix to check if read correctly
     cout << endl << endl << endl;
     input.close();
+    //Test if it walks (spoiler: yes it does)
     snakes[1].set_starting_pos(0, 5, matrix);
     for (int i = 0; i < 10; i++)
     {
